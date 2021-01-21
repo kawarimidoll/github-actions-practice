@@ -26,3 +26,5 @@ jobs:
           echo ${GITHUB_WORKSPACE}
           echo ${GITHUB_SHA}
           echo ${GITHUB_REF}
+      - name: Show context
+        run: echo "${{ toJson(github) }}"
