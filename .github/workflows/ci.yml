@@ -1,6 +1,9 @@
 name: Continuous Integration
 on: push
 
+env:
+  cache-version: v1
+
 jobs:
   unit-test:
     name: Unit Test
@@ -23,8 +26,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-
+          key: ${{ env.cache-version }}-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-yarn-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Test
