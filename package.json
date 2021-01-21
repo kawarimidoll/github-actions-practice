@@ -10,6 +10,9 @@
     "test": "mocha"
   },
   "dependencies": {
-    "mocha": "^8.2.1"
+    "@cybozu/eslint-config": "^11.0.3",
+    "eslint": "^7.18.0",
+    "mocha": "^8.2.1",
+    "prettier": "^2.2.1"
   }
 }

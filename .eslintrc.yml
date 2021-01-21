@@ -1,0 +1,4 @@
+env:
+  mocha: true
+extends: '@cybozu/eslint-config/presets/node-prettier'
+root: true
