@@ -28,5 +28,5 @@ jobs:
           node-version: '12'
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Test
+      - name: Lint
         run: yarn lint
