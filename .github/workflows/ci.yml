@@ -4,14 +4,18 @@ on: push
 jobs:
   unit-test:
     name: Unit Test
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [10, 12]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Set Node
+      - name: Set Node ${{ matrix.node }}
         uses: actions/setup-node@v2
         with:
-          node-version: '12'
+          node-version: ${{ matrix.node }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Test
