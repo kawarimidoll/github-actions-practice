@@ -30,3 +30,9 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Lint
         run: yarn lint
+  deploy:
+    name: Deploy dummy
+    needs: [unit-test, lint]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'deploy!'
