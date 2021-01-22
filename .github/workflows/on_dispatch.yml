@@ -1,0 +1,10 @@
+name: On Dispatch
+on: repository_dispatch
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, Dispatch!"
+      - name: Show context
+        run: echo "${{ toJson(github) }}"
