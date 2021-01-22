@@ -7,4 +7,4 @@ jobs:
     steps:
       - run: echo "Hello, Dispatch!"
       - name: Show context
-        run: echo "${{ toJson(github) }}"
+        run: echo "${{ toJson(github.event) }}"
