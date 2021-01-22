@@ -1,0 +1,10 @@
+name: Run Hello in Other Repository
+on: push
+
+jobs:
+  hello-other:
+    runs-on: ubuntu-latest
+    name: Hello Other Repository
+    steps:
+      - name: Hello kawarimidoll/action-hello
+        uses: kawarimidoll/action-hello@v1.0.0
