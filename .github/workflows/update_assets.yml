@@ -1,6 +1,7 @@
 name: Update Assets
 on:
-  repository_dispatch: [update-assets]
+  repository_dispatch:
+    types: [update-assets]
 
 # ref: https://github.com/technote-space/technote-space/blob/master/.github/workflows/update-stats.yml
 
